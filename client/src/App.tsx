@@ -2,21 +2,19 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/login/Login';
+import Register from './components/register/Register';
+import Admin from './components/admin/Admin';
+import Vacations from './components/vacations/Vacations';
 
 function App() {
   return (
     <div className='App'>
       <Routes>
-        <Route path='/' element={<Login />} />
-        {/*<Route path="/customer" element={<Customer />} />
-        <Route path="/admin" element={<Admin />} />*/}
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path='/' element={<Vacations />} />
+        <Route path='/users/login' element={<Login />} />
+        <Route path='/users/register' element={<Register />} />
+        <Route path='/admin' element={<Admin />} />
       </Routes>
-      <div className='PageView'>
-        <div className='Header'>header</div>
-        <div className='Menu'>Menu</div>
-        <div className='Footer'>Footer</div>
-      </div>
     </div>
   );
 }
