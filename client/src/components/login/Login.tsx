@@ -22,7 +22,7 @@ function Login() {
         .post('http://localhost:3001/users/login', loginData)
         .then((response) => {
           let serverResponse = response.data;
-          console.log(serverResponse);
+          console.log('serverResponse:'+serverResponse);
           serverResponse.userType === 'Admin'
             ? navigate('/admin')
             : navigate('/customer');
@@ -38,7 +38,7 @@ function Login() {
       action=''
       className='Form'
       onSubmit={(e) => {
-        e.preventDefault;
+        e.preventDefault();
       }}
     >
       <div className='Input-Container'>

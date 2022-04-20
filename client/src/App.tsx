@@ -5,10 +5,12 @@ import Login from './components/login/Login';
 import Register from './components/register/Register';
 import Admin from './components/admin/Admin';
 import Vacations from './components/vacations/Vacations';
+import Navbar from './components/layoutcomp/Navbar';
 
 function App() {
   return (
     <div className='App'>
+      <Navbar/>
       <Routes>
         <Route path='/' element={<Vacations />} />
         <Route path='/users/login' element={<Login />} />

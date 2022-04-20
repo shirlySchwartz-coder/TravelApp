@@ -3,24 +3,29 @@ import '../../App.css';
 
 function Register() {
   let [firstname, setFirstName] = useState('');
-  let [lastname, setLasttName] = useState('');
-  let [userName, setUserName] = useState('');
+  let [lastname, setLastName] = useState('');
+  let [username, setUserName] = useState('');
   let [password, setPassword] = useState('');
 
   const OnInputChanged = (event: ChangeEvent<HTMLInputElement>) => {
     let tempInfo = event.target.value;
     if (event.target.name === 'firstname') {
-      setUserName(tempInfo);
+      setFirstName(tempInfo);
     }
     if (event.target.name == 'lastname') {
+      setLastName(tempInfo);
+    }
+    if (event.target.name == 'username') {
+      setUserName(tempInfo);
+    }
+    if (event.target.name == 'password') {
       setPassword(tempInfo);
     }
-
-    console.log('userName' + userName);
-    console.log('password' + password);
+    console.log(event.target.name +':' + tempInfo);
+    
   };
   return (
-    <form action='' className='Form'>
+    <div className='Form'>
       <div className='Form-Label'>
         <label className='Label'>Register</label>
       </div>
@@ -59,7 +64,7 @@ function Register() {
           name='username'
           placeholder='User Name'
           className='Input'
-          value={userName}
+          value={username}
           onChange={OnInputChanged}
         />
       </div>
@@ -80,7 +85,7 @@ function Register() {
       <button type='submit' className='Login-Btn'>
         Register
       </button>
-    </form>
+    </div>
   );
 }
 export default Register;
