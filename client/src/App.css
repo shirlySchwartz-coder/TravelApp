@@ -1,9 +1,12 @@
+
+  
 body {
   margin: 0;
   padding: 0;
+
 }
 .App {
-  height: 500px;
+  height: 100%;
   min-height: 100vh;
   background-image: url('./../public/background.jpg');
   background-size: cover;
@@ -14,6 +17,8 @@ body {
   justify-content: center;
   align-items: center;
   font-family: sans-serif;
+  display: flex;
+ 
 }
 
 .Form {
@@ -60,4 +65,8 @@ body {
     background-color: rgb(137, 28, 167) ;
     box-shadow: none;
     transform: translateX(2px) translateY(2px);
+}
+.head-line {
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
 }

@@ -1,10 +1,10 @@
-export default interface IVacation{
+export default interface IVacation {
   id: number;
   destination: string;
   price: number;
   amountOfFollowers: number;
   isFollowed: number;
   imageUrl: string;
-  startDate: Date; 
-  endDate:Date;
+  startDate: string;
+  endDate: string;
 }

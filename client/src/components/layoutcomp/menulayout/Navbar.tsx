@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 export default function Navbar() {
   let [navbarState, setNavbarState] = useState(false);
   let [navbarClass, setNavbarClass] = useState('collapse navbar-collapse');
+  let [menuText, setMenuText ]= useState('Menu');
   let menus = [
     {
       id: 1,
@@ -26,29 +28,37 @@ export default function Navbar() {
       url: '/contact',
     },
   ];
-
+  let logo = 'https://cdn.pixabay.com/photo/2017/04/08/18/45/plane-2214094_640.png';
+  
   const navbarToggler = () => {
+    let currentState = navbarState;
+    currentState = !currentState;
     if (navbarState == true) {
       setNavbarClass('collapse navbar-collapse');
-      setNavbarState(false);
+      setNavbarState(currentState);
+      setMenuText('Menu');
     } else {
       setNavbarClass('collapse navbar-collapse show');
-      setNavbarState(true);
+      setNavbarState(currentState);
+      setMenuText('X');
     }
   };
 
   return (
-    <div className='navbar'>
+    <div className='navbar myNavbar'>
       <nav className='navbar navbar-expand-sm bg-theme text-white'>
         <Link to='/' className='navbar-brand ml-5'>
-          <img src='/' alt='Logo' width='40px' />
+          <img src={logo} alt='Logo' width='40px' />
         </Link>
         <button
           className='navbar-toggler'
           type='button'
           onClick={navbarToggler}
         >
-          <span className='text-white'>Menu</span>
+         
+          <button className='text-black' value={menuText}>
+            {menuText}
+          </button>
         </button>
         <div className={navbarClass}>
           <ul className='navbar-nav ml-auto mr-5'>
